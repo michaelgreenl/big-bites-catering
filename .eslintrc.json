@@ -1,3 +1,55 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@babel/eslint-parser",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-debugger": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "max-len": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "global-require": "off",
+    "no-underscore-dangle": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      }
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "newline-per-chained-call": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before"
+        }
+      }
+    ],
+    "wrap-iife": "off"
+  }
 }
