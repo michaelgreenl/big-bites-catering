@@ -1,0 +1,66 @@
+// Mobile-first responsive breakpoints
+$breakpoints: (
+  phone: 320px,
+  tablet: 425px,
+  laptop: 768px,
+  lrg-laptop: 1024px,
+  xxl-laptop: 1440px,
+  xxxl-laptop: 1675px,
+) !default;
+
+@mixin bp-phone {
+  @media (min-width: map-get($breakpoints, 'phone')) {
+    @content;
+  }
+}
+
+@mixin bp-tablet {
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    @content;
+  }
+}
+
+@mixin bp-laptop {
+  @media (min-width: map-get($breakpoints, 'laptop')) {
+    @content;
+  }
+}
+
+@mixin bp-lrg-laptop {
+  @media (min-width: map-get($breakpoints, 'lrg-laptop')) {
+    @content;
+  }
+}
+
+@mixin bp-4k-laptop {
+  @media (min-width: map-get($breakpoints, 'xxl-laptop')) {
+    @content;
+  }
+}
+
+@mixin bp-xl4k-laptop {
+  @media (min-width: map-get($breakpoints, 'xxxl-laptop')) {
+    @content;
+  }
+}
+
+// Custom sizes
+@mixin bp-custom-min($min-width) {
+  @media (min-width: ($min-width + 'px')) {
+    @content;
+  }
+}
+
+@mixin bp-custom-max($max-width) {
+  @media (max-width: ($max-width + 'px')) {
+    @content;
+  }
+}
+
+@mixin hoverStyles() {
+  @media (hover: hover) {
+    &:not([disabled]):hover {
+      @content;
+    }
+  }
+}
