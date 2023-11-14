@@ -1,0 +1,427 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  margin-top: 4em;
+  padding: 2em 0.5em 0.75em;
+  gap: 1.5em;
+
+  hr {
+    width: 98%;
+    border: solid $primary-white 1px;
+    opacity: 0.5;
+  }
+
+  h5 {
+    font-family: $secondary-font-stack;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 0.08ch;
+    color: $primary-white;
+  }
+
+  span {
+    font-family: $primary-font-stack;
+    font-size: 1.02em;
+    letter-spacing: 0.04ch;
+    color: $primary-white;
+  }
+
+  header,
+  section,
+  &_footer {
+    width: 100%;
+  }
+
+  .listWrapper {
+    display: flex;
+    flex-direction: column;
+    color: $primary-white;
+    font-family: $primary-font-stack;
+
+    &--buttons {
+      gap: 1.5em;
+    }
+
+    &--locations {
+      font-size: 1em;
+    }
+
+    .link {
+      .button {
+        display: flex;
+        align-items: center;
+        font-size: 0.99em !important;
+        background-color: $bright-blue !important;
+        gap: 0.2em;
+
+        .svg {
+          stroke: $primary-white;
+          stroke-width: 12px;
+          transform: rotate(-90deg);
+          height: 0.75em;
+          width: 0.75em;
+        }
+      }
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 60rem;
+
+    .listWrapper {
+      display: none;
+
+      &--contact {
+        font-size: 1.4em !important;
+      }
+
+      &--buttons {
+        // FIXME: make this a clamp?
+        // font-size: clamp(1.3em, 3vw, 1.4em);
+        font-size: 1.3em;
+        flex-direction: row;
+        margin: 0.5em 0 7em;
+      }
+    }
+
+    .logo {
+      height: 5em;
+      width: 10em;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6em;
+      padding-right: 2em;
+
+      .logo {
+        height: 2.25em;
+        width: 2.25em;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 1.34em;
+    width: 100%;
+    padding: 0 0.3em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .listWrapper {
+      &--buttons {
+        flex-direction: column;
+        margin: auto;
+        align-items: flex-end;
+        transform: translateY(-0.5em);
+      }
+
+      .link {
+        &:last-child {
+          transform: translateY(0.5em);
+        }
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        list-style: none;
+
+        .item {
+          display: flex;
+
+          .link {
+            display: flex;
+
+            @include hoverStyles {
+              text-decoration: underline;
+              text-underline-offset: 3px;
+            }
+
+            &--locations {
+              flex-direction: column;
+            }
+
+            .text {
+              &--locations {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              }
+
+              &--address {
+                & > br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_footer {
+    font-size: 1.1em;
+    font-size: 1.09em;
+    display: flex;
+    padding: 0.5em 1em;
+    padding: 0.5em;
+    font-weight: 200;
+    justify-content: center;
+
+    .copyright {
+      .separator {
+        display: none;
+      }
+    }
+  }
+
+  @include bp-phone {
+    gap: 2em;
+
+    h5 {
+      font-size: 1.5em;
+    }
+
+    span {
+      font-size: 1.15em;
+    }
+
+    &_header {
+      .logo {
+        font-size: clamp(1em, 3vw, 1.2em);
+        height: 5.5em;
+        width: 11em;
+      }
+
+      .socials {
+        width: 48%;
+        min-width: 16rem;
+        max-width: 20.5rem;
+        gap: 2em;
+
+        .logo {
+          font-size: clamp(1em, 3vw, 1.2em);
+          height: 2.75em;
+          width: 2.75em;
+        }
+      }
+    }
+
+    .links {
+      width: 100%;
+      min-width: 30rem;
+      max-width: 55rem;
+      margin: 0em auto;
+      padding: 0 0.5em;
+      font-size: clamp(1em, 3vw, 1.3em);
+    }
+  }
+
+  @include bp-custom-min(496) {
+    &_footer {
+      .copyright {
+        & > br {
+          display: none !important;
+        }
+
+        .separator {
+          display: contents;
+        }
+      }
+    }
+  }
+
+  @include bp-custom-min(500) {
+    .links {
+      padding: 0 1.75em;
+
+      .listWrapper {
+        &--buttons {
+          margin: 0 1em 0 0;
+        }
+      }
+    }
+  }
+
+  @include bp-tablet {
+    gap: 3em;
+
+    &_header {
+      .logo {
+        font-size: clamp(1.2em, 3.5vw, 1.4em);
+      }
+
+      .socials {
+        .logo {
+          font-size: clamp(1.2em, 3.5vw, 1.4em);
+          height: 2.75em;
+          width: 2.75em;
+
+          &:last-child {
+            height: 2.5em;
+            width: 2.5em;
+          }
+        }
+      }
+    }
+
+    .links {
+      gap: 2.25em;
+      padding: 0 0.75em;
+
+      .listWrapper {
+        &--buttons {
+          font-size: 1.1em;
+        }
+
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+          list-style: none;
+
+          .item {
+            display: flex;
+
+            .link {
+              display: flex;
+
+              @include hoverStyles {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              }
+
+              &--locations {
+                flex-direction: column;
+              }
+
+              .text {
+                &--locations {
+                  text-decoration: underline;
+                  text-underline-offset: 3px;
+                }
+
+                &--address {
+                  & > br {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include bp-laptop {
+    flex-direction: row;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2em 1.5em 0.75em;
+
+    header {
+      width: auto;
+    }
+
+    &_header {
+      font-size: clamp(0.9em, 1.1vw, 1em);
+      flex-direction: column;
+      gap: 1.5em;
+      height: 35em;
+      justify-content: flex-start;
+      margin: 0 0.75em;
+
+      .logo {
+        transform: translateX(-10px);
+        height: 7em;
+        width: 14em;
+      }
+
+      .listWrapper {
+        display: flex;
+      }
+
+      .socials {
+        width: 80%;
+        max-width: none;
+        padding: 0 1.5em;
+
+        .logo {
+          height: 2.6em;
+          width: 2.6em;
+        }
+      }
+    }
+
+    .links {
+      flex: 1;
+      max-width: 66rem;
+      font-size: clamp(1.1em, 1.4vw, 1.2em);
+      margin: 0;
+      padding: 4em 0 7em 0.5em;
+      gap: 0;
+
+      .listWrapper {
+        &--contact,
+        &--buttons {
+          display: none;
+        }
+
+        .list {
+          .item {
+            .link {
+              .text {
+                &--address {
+                  & > br {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      justify-content: flex-end;
+    }
+  }
+
+  @include bp-custom-min(875) {
+    padding: 2em 2em 0.75em;
+
+    &_header {
+      .listWrapper {
+        &--buttons {
+          // FIXME: make this a clamp?
+          font-size: 1.4em;
+        }
+      }
+    }
+
+    .links {
+      padding: 5em 0 9em 1em;
+    }
+  }
+
+  @include bp-4k-laptop {
+    justify-content: center;
+
+    &_header {
+      margin-right: 12em;
+    }
+  }
+}
