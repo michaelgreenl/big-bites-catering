@@ -1,0 +1,135 @@
+@import '@/app/_scss/variables.module.scss';
+
+.photoSlider {
+  margin: 0.25em 0 2em;
+  width: 90vw;
+  max-width: 38rem;
+
+  &_slideWrapper {
+    display: flex;
+    justify-content: center;
+
+    &_stacked {
+      flex-direction: column;
+      align-items: center;
+      gap: 1%;
+    }
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    display: none !important;
+  }
+
+  .next-arrow,
+  .prev-arrow {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 10px !important;
+    height: 3.25em !important;
+    width: 3.25em !important;
+    background: white !important;
+    box-shadow: 0 0 2px black;
+    opacity: 0.8;
+    transition: all 100ms ease;
+
+    @include hoverStyles {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+      height: 3em !important;
+      width: 3em !important;
+    }
+  }
+
+  .next-arrow {
+    transform: translate(-12px, -17px) !important;
+    &:active {
+      transform: translate(-13px, -15px) !important;
+    }
+  }
+
+  .prev-arrow {
+    z-index: 1;
+    transform: translate(12px, -17px) !important;
+    &:active {
+      transform: translate(13px, -15px) !important;
+    }
+  }
+
+  .arrow {
+    stroke: $dark-grey;
+    height: 1.5em;
+    width: 4em;
+    stroke-width: 10px;
+  }
+
+  .slick-track {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  @include bp-custom-min(530) {
+    max-width: 68em;
+  }
+
+  @include bp-laptop {
+    width: 40vw;
+    max-width: 38em;
+    margin: 3em 1em;
+  }
+
+  @include bp-custom-min(1100) {
+    width: 55vw;
+    max-width: 70em;
+  }
+  
+  @include bp-4k-laptop {
+    width: 60vw;
+    max-width: 130rem;
+  }
+  
+  @include bp-custom-min(1675) {
+    width: 67vw;
+
+    .prev-arrow,
+    .next-arrow {
+      height: 4em !important;
+      width: 4em !important;
+
+      @include hoverStyles {
+        opacity: 1;
+      }
+
+      &:active {
+        opacity: 1;
+        height: 3.8em !important;
+        width: 3.8em !important;
+      }
+    }
+
+    .next-arrow {
+      transform: translate(-9px, -20px) !important;
+      &:active {
+        transform: translate(-10px, -18px) !important;
+      }
+    }
+
+    .prev-arrow {
+      transform: translate(9px, -20px) !important;
+      &:active {
+        transform: translate(10px, -18px) !important;
+      }
+    }
+
+    .arrow {
+      height: 2em;
+      width: 5em;
+      stroke-width: 8px;
+    }
+  }
+}
