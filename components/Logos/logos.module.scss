@@ -1,0 +1,88 @@
+.Logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 42em;
+
+  .Cont {
+    font-size: clamp(0.9rem, 3.25vw, 1.4rem);
+    min-height: 8em;
+    min-width: 8em;
+
+    .Padd {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @include bp-custom-min(590) {
+    max-width: none;
+
+    .Cont {
+      font-size: clamp(1.4rem, 2vw, 1.6rem);
+      &:nth-child(6) {
+        margin-left: 3em;
+      }
+
+      &:last-child {
+        margin-right: 3em;
+      }
+    }
+  }
+
+  @include bp-laptop {
+    max-height: 38rem;
+    max-width: 39rem;
+    min-width: 39rem;
+
+    .Cont {
+      &:nth-child(6) {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include bp-custom-min(1190) {
+    max-width: 66rem;
+
+    .Cont {
+      &:nth-child(6) {
+        margin-left: 5em;
+      }
+
+      &:last-child {
+        margin-right: 3em;
+      }
+    }
+  }
+
+  @include bp-4k-laptop {
+    max-width: 90rem;
+
+    .Cont {
+      height: 9em;
+      width: 9em;
+    }
+  }
+
+  @include bp-custom-min(1100) {
+    margin: 0 auto;
+  }
+
+  @include bp-custom-min(1230) {
+    margin: 0;
+  }
+
+  @include bp-4k-laptop {
+    margin: 0 auto;
+  }
+
+  @include bp-custom-min(1966) {
+    margin: 0;
+  }
+}
