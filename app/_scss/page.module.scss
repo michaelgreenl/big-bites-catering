@@ -1,0 +1,339 @@
+@import './variables.module.scss';
+
+.main {
+  font-size: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: $primary-font-stack;
+  background-color: $primary-white;
+
+  section,
+  .subSectionWrapper,
+  .subSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: $primary-font-stack;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: $secondary-font-stack;
+    font-weight: 500;
+    color: $secondary-black;
+    letter-spacing: -0ch;
+  }
+
+  h3 {
+    font-family: $secondary-font-stack;
+    font-weight: 500;
+    color: $secondary-black;
+    letter-spacing: 0.07ch;
+  }
+
+  p {
+    font-weight: 300;
+    color: $secondary-black;
+  }
+
+  .landing {
+    &_logo {
+      width: 60%;
+      height: 40%;
+    }
+
+    &_header {
+      font-size: 2.6em;
+      line-height: 1.2em;
+      text-align: center;
+      color: $primary-white;
+      width: 100%;
+      padding: 0em 0 0.2em;
+      margin-bottom: 0.5em;
+      border-bottom: 2px $primary-white solid;
+    }
+
+    &_ctaButtons {
+      font-size: 1.35em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5%;
+      width: 100%;
+    }
+
+    @include bp-phone {
+      &_header {
+        font-size: clamp(2.2em, 6.8vw, 3.25em);
+
+        & > br {
+          display: none;
+        }
+      }
+
+      &_ctaButtons {
+        font-size: clamp(1.3em, 4.25vw, 1.7em);
+      }
+    }
+  }
+
+  .mainSection {
+    & > header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      max-width: 220rem;
+      margin: 2em 0 0;
+
+      h2 {
+        font-family: $secondary-font-stack;
+        font-style: oblique;
+        font-size: clamp(4.4em, 10vw, 5.8em);
+      }
+
+      hr {
+        margin: 0em 0 0;
+        width: 90%;
+        max-width: 210rem;
+        border: 1px solid $silver;
+      }
+    }
+  }
+
+  .subSection {
+    max-width: 220rem;
+
+    .Article {
+      padding: 1em;
+
+      .Header {
+        font-size: 2.6em;
+        font-weight: 400;
+        letter-spacing: -0ch;
+        margin: 0.25em 0 0.1em;
+      }
+
+      .Text {
+        font-size: clamp(1.5em, 4vw, 1.6em);
+      }
+    }
+
+    &Separator {
+      margin: 2em 0 0;
+      width: 70%;
+      max-width: 180rem;
+      border: 1px solid $silver;
+    }
+  }
+
+  .services {
+    .SubContent {
+      position: relative;
+      margin-top: 1em;
+      padding: 4em 2em;
+      color: $primary-white;
+      background-image: url(/assets/images/backgrounds/content-background.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 100% 41%;
+
+      & > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2) 75%);
+      }
+
+      .Header {
+        font-size: clamp(2em, 6.5vw, 2.65em);
+        color: $primary-white !important;
+      }
+
+      .Button {
+        margin-top: 0.5em;
+        font-size: clamp(1.5em, 4.5vw, 1.7em);
+      }
+    }
+  }
+
+  .intro {
+    .subSectionWrapper {
+      padding: 0 1.5em;
+
+      .subSection {
+        .Article {
+          max-width: 65rem;
+
+          .CtaButtonWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            width: 100%;
+            padding: 1em 0 0;
+
+            & > a {
+              & > button {
+                margin: 0 !important;
+              }
+            }
+          }
+
+          .CtaLink {
+            align-self: center;
+
+            .Button {
+              font-size: clamp(1.4em, 3vw, 1.5em);
+              display: flex;
+              align-items: center;
+              gap: 0.3em;
+              margin: 1.5em 0 1em;
+              background-color: $bright-blue;
+
+              .Icon {
+                height: 0.7em;
+                width: 0.7em;
+                stroke: $primary-white;
+                stroke-width: 13px;
+                transform: rotate(-90deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include bp-phone {
+    .intro {
+      .subSectionWrapper {
+        .subSection {
+          .Article {
+            .CtaButtonWrapper {
+              flex-wrap: nowrap;
+              gap: 1em;
+              padding: 0;
+
+              & > a {
+                & > button {
+                  margin: 1.5em 0 0em !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include bp-tablet {
+    .mainSection {
+      & > header {
+        h2 {
+          align-self: flex-start;
+          margin-left: 6%;
+        }
+      }
+    }
+  }
+
+  @include bp-laptop {
+    .subSectionWrapper {
+      padding: 1em 1.5em;
+      .subSection {
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        padding: 3em 1em;
+
+        .Article {
+          max-width: 50rem !important;
+          padding: 1em 2em;
+
+          .Header {
+            font-size: clamp(2.6em, 3.3vw, 3.75em);
+          }
+
+          .Text {
+            font-size: clamp(1.6em, 1.8vw, 1.7em);
+          }
+
+          .CtaLinkButton {
+            font-size: 1.6em !important;
+          }
+        }
+      }
+    }
+
+    .services {
+      .SubContent {
+        .Button {
+          margin-top: 0.75em;
+        }
+      }
+    }
+  }
+
+  @include bp-4k-laptop {
+    .landing {
+      font-size: 12px;
+      .HeaderText {
+        font-size: 3.8em;
+      }
+    }
+
+    .mainSection {
+      & > header {
+        h2 {
+          font-size: 6em;
+        }
+      }
+    }
+
+    .subSectionWrapper {
+      .subSection {
+        .Article {
+          max-width: 61rem !important;
+        }
+      }
+    }
+
+    .services {
+      .SubContent {
+        gap: 1em;
+
+        .Button {
+          font-size: 1.85em;
+          margin: 0.25em;
+        }
+      }
+    }
+  }
+
+  @include bp-xl4k-laptop {
+    font-size: 11px;
+  }
+}
