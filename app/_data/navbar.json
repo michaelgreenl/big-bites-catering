@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "href": "/",
+      "name": "Home",
+      "dropdown": false
+    },
+    {
+      "href": "/menu",
+      "name": "Menu",
+      "dropdown": false
+    },
+    {
+      "href": ["/wedding-catering", "/social-gatherings", "/corporate-catering"],
+      "name": "Services",
+      "dropdown": true
+    },
+    {
+      "href": "/gallery",
+      "name": "Gallery",
+      "dropdown": false
+    },
+    {
+      "href": "/contact",
+      "name": "Contact",
+      "dropdown": false
+    },
+    {
+      "href": "/about",
+      "name": "About Us",
+      "dropdown": false
+    }
+  ]
+}
