@@ -1,7 +1,7 @@
 import styles from './navbar.module.scss';
 import Link from 'next/link';
-import Button from '@/components/Button/Button';
-import { ArrowSvg } from '../svgs/ArrowSvg';
+import Button from '@/components/Global/Button/Button';
+import { ArrowSvg } from '../../svgs/ArrowSvg';
 
 const NavItem = ({
   href,

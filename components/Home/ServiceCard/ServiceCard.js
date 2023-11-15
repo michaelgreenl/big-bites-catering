@@ -1,8 +1,8 @@
 import styles from './serviceCards.module.scss';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
-import Button from '../Button/Button';
-import { ArrowSvg } from '../svgs/ArrowSvg';
+import Button from '../../Global/Button/Button';
+import { ArrowSvg } from '../../svgs/ArrowSvg';
 
 const ServiceCard = ({
   href,

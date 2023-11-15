@@ -2,10 +2,10 @@
 
 import './PhotoSlider.scss';
 import Slider from 'react-slick';
-import GalleryImage from '../GalleryImage/GalleryImage';
+import GalleryImage from '../../Gallery/GalleryImage/GalleryImage';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { ArrowSvg } from '../svgs/ArrowSvg';
+import { ArrowSvg } from '../../svgs/ArrowSvg';
 
 const PhotoSlider = () => {
   const sliderImages = [

@@ -1,4 +1,4 @@
-import LandingSection from '@/components/LandingSection/LandingSection';
+import LandingSection from '@/components/Global/LandingSection/LandingSection';
 import landingBackgroundImage from '@/public/assets/images/backgrounds/corporate-catering-background.webp';
 
 export default function CorporateCatering() {

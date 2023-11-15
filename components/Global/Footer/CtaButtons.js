@@ -1,7 +1,7 @@
 import styles from './footer.module.scss';
 import Link from 'next/link';
 import Button from '../Button/Button';
-import { ArrowSvg } from '../svgs/ArrowSvg';
+import { ArrowSvg } from '../../svgs/ArrowSvg';
 
 const CtaButtons = () => {
   return (

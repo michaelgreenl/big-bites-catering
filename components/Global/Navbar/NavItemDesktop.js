@@ -2,9 +2,9 @@
 
 import styles from './navbar.module.scss';
 import Link from 'next/link';
-import { ArrowSvg } from '../svgs/ArrowSvg';
+import { ArrowSvg } from '../../svgs/ArrowSvg';
 import Button from '../Button/Button';
-import { PolygonSvg } from '../svgs/PolygonSvg';
+import { PolygonSvg } from '../../svgs/PolygonSvg';
 
 const NavItemDesktop = ({
   isActive,

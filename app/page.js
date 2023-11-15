@@ -1,14 +1,14 @@
 import styles from '@/app/_scss/page.module.scss';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
-import Button from '@/components/Button/Button';
+import Button from '@/components/Global/Button/Button';
 import landingBackgroundImage from '@/public/assets/images/backgrounds/landing-background.webp';
-import LandingSection from '@/components/LandingSection/LandingSection';
-import ServicesList from '@/components/ServicesList/ServicesList';
-import PhotoSlider from '@/components/PhotoSlider/PhotoSlider';
-import ServiceCards from '@/components/ServiceCard/ServiceCards';
+import LandingSection from '@/components/Global/LandingSection/LandingSection';
+import ServicesList from '@/components/Home/ServicesList/ServicesList';
+import PhotoSlider from '@/components/Global/PhotoSlider/PhotoSlider';
+import ServiceCards from '@/components/Home/ServiceCard/ServiceCards';
 import { ArrowSvg } from '@/components/svgs/ArrowSvg';
-import Logos from '@/components/Logos/Logos';
+import Logos from '@/components/Home/Logos/Logos';
 
 export default function Home() {
   return (
