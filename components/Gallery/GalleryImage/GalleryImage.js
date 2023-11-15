@@ -1,7 +1,7 @@
 'use client';
 
+import styles from './galleryImage.module.scss';
 import { useState } from 'react';
-import './GalleryImage.css';
 import Image from 'next/legacy/image';
 
 const GalleryImage = ({ imageSrc, imageHeight, imageWidth }) => {
@@ -11,8 +11,7 @@ const GalleryImage = ({ imageSrc, imageHeight, imageWidth }) => {
     <>
       {!isActive && (
         // <div className='gallery-button-wrapper' style={{ width: buttonWidth }}>
-        <button className='gallery-image-button' onClick={() => setIsActive(true)}>
-          {/* <button className='gallery-image-button' onClick={() => setIsActive(true)} style={{ width: buttonWidth }}> */}
+        <button className={styles.imageButton} onClick={() => setIsActive(true)}>
           <Image
             src={imageSrc}
             alt='Downtown Detroit Catering Gallery Image'

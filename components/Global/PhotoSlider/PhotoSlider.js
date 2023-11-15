@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './photoSlider.module.scss';
 import './PhotoSlider.scss';
 import Slider from 'react-slick';
 import GalleryImage from '../../Gallery/GalleryImage/GalleryImage';
@@ -110,7 +111,8 @@ const PhotoSlider = () => {
       {sliderImages.map((image, index) => (
         <>
           {index % 2 === 0 ? (
-            <div className='photoSlider_slideWrapper' key={image.src}>
+            // <div className='photoSlider_slideWrapper' key={image.src}>
+            <div className={styles.slideWrapper} key={image.src}>
               <div style={{ width: image.buttonWidth }}>
                 <GalleryImage
                   imageSrc={image.src}
@@ -121,9 +123,9 @@ const PhotoSlider = () => {
               </div>
             </div>
           ) : (
-            <div className='photoSlider_slideWrapper' key={image[0].src}>
+            <div className={styles.slideWrapper} key={image[0].src}>
               <div
-                className='photoSlider_slideWrapper photoSlider_slideWrapper_stacked'
+                className={`${styles.slideWrapper} ${styles['slideWrapper--stacked']}`}
                 style={{ width: image[0].buttonWidth }}
               >
                 <GalleryImage

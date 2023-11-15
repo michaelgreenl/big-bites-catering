@@ -1,0 +1,10 @@
+.imageButton {
+  height: 100%;
+  width: 100%;
+  transition: all 100ms ease-in-out;
+  border: 0;
+
+  @include hoverStyles {
+    filter: brightness(0.8);
+  }
+}
