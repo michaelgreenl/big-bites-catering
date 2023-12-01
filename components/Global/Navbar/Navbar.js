@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './navbar.module.scss';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -35,23 +35,21 @@ const Navbar = () => {
 
   const [otherLinkHovered, setOtherLinkHovered] = useState(false);
 
-  const navbarVariants = useMemo(() => {
-    return {
-      navbar: {
-        open: { x: 0, width: '23rem', transition: { ease: 'easeOut', duration: 0.15 } },
-        closed: { x: '100%', width: '23rem', transition: { ease: 'easeOut', duration: 0.15 } },
-        dropdownOpen: { x: 0, width: '26.5rem', transition: { ease: 'easeOut', duration: 0.15 } },
-      },
-      servicesList: {
-        open: { maxHeight: '300px', padding: '1rem 3rem 0 0', transition: { ease: 'easeOut', duration: 0.15 } },
-        closed: { maxHeight: '0px', padding: '0', transition: { ease: 'easeOut', duration: 0.15 } },
-      },
-      desktopServicesList: {
-        open: { maxHeight: '300px', transition: { ease: 'easeInOut', duration: 0.25 } },
-        closed: { maxHeight: 0, transition: { ease: 'easeInOut', duration: 0.15 } },
-      },
-    };
-  });
+  const navbarVariants = {
+    navbar: {
+      open: { x: 0, width: '23rem', transition: { ease: 'easeOut', duration: 0.15 } },
+      closed: { x: '100%', width: '23rem', transition: { ease: 'easeOut', duration: 0.15 } },
+      dropdownOpen: { x: 0, width: '26.5rem', transition: { ease: 'easeOut', duration: 0.15 } },
+    },
+    servicesList: {
+      open: { maxHeight: '300px', padding: '1rem 3rem 0 0', transition: { ease: 'easeOut', duration: 0.15 } },
+      closed: { maxHeight: '0px', padding: '0', transition: { ease: 'easeOut', duration: 0.15 } },
+    },
+    desktopServicesList: {
+      open: { maxHeight: '300px', transition: { ease: 'easeInOut', duration: 0.25 } },
+      closed: { maxHeight: 0, transition: { ease: 'easeInOut', duration: 0.15 } },
+    },
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -198,7 +196,11 @@ const Navbar = () => {
                 variants={navbarVariants.desktopServicesList}
                 animate={desktopServicesListControls}
                 exit='closed'
-                onMouseLeave={() => setServicesListOpen(false)}
+                onMouseLeave={() => {
+                  setTimeout(() => {
+                    setServicesListOpen(false);
+                  }, 750);
+                }}
               >
                 <ul className={styles.dropdownList}>
                   <li className={styles.dropdownLinkCont}>
@@ -206,6 +208,7 @@ const Navbar = () => {
                       <div className={styles.icon}>
                         <Image
                           src='/assets/svgs/wedding-catering/wedding-catering-white.svg'
+                          alt='Wedding Catering Icon'
                           layout='responsive'
                           height={100}
                           width={100}
@@ -217,7 +220,13 @@ const Navbar = () => {
                   <li className={styles.dropdownLinkCont}>
                     <Link className={styles.dropdownLink} href='/corporate-catering'>
                       <div className={styles.icon}>
-                        <Image src='/assets/svgs/tie/tie-white.svg' layout='responsive' height={100} width={100} />
+                        <Image
+                          src='/assets/svgs/tie/tie-white.svg'
+                          alt='Corporate Catering Icon'
+                          layout='responsive'
+                          height={100}
+                          width={100}
+                        />
                       </div>
                       <span>Corporate Catering</span>
                     </Link>
@@ -227,6 +236,7 @@ const Navbar = () => {
                       <div className={styles.icon}>
                         <Image
                           src='/assets/svgs/social-gatherings/social-gatherings-white.svg'
+                          alt='Social Gatherings Catering Icon'
                           layout='responsive'
                           height={100}
                           width={100}

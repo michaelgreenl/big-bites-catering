@@ -52,6 +52,16 @@
     .activeSlideWrapper {
       height: 100% !important;
       width: 99.9% !important;
+
+      margin: 0 auto;
+
+      &--portrait {
+        max-width: 50rem;
+      }
+
+      &--landscape {
+        max-width: 68rem;
+      }
     }
   }
 }
@@ -60,15 +70,8 @@
   .activeSliderWrapper {
     .activePhotoSlider {
       .activeSlideWrapper {
-        margin: 0 auto;
-
         &--portrait {
           width: 80% !important;
-          max-width: 50rem;
-        }
-
-        &--landscape {
-          max-width: 68rem;
         }
       }
     }
