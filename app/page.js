@@ -5,7 +5,7 @@ import Button from '@/components/Global/Button/Button';
 import landingBackgroundImage from '@/public/assets/images/backgrounds/landing-background.webp';
 import LandingSection from '@/components/Global/LandingSection/LandingSection';
 import ServicesList from '@/components/Home/ServicesList/ServicesList';
-import PhotoSlider from '@/components/Global/PhotoSlider/PhotoSlider';
+import PhotoSlider from '@/components/Gallery/PhotoSlider/PhotoSlider';
 import ServiceCards from '@/components/Home/ServiceCard/ServiceCards';
 import { ArrowSvg } from '@/components/svgs/ArrowSvg';
 import Logos from '@/components/Home/Logos/Logos';
@@ -69,12 +69,12 @@ export default function Home() {
             <article className={styles.Article}>
               <h3 className={styles.Header}>Bigg Bites Catering</h3>
               <p className={styles.Text}>
-                Bigg Bites Detroit catering company has been proud to service the metro for years. It's with the upmost
-                joy that we provide excellent taste, service, and experience. No matter the event, we provide wedding
-                catering, corporate catering, large event catering and more.
+                Bigg Bites Detroit catering company has been proud to service the metro for years. It&#39;s with the
+                upmost joy that we provide excellent taste, service, and experience. No matter the event, we provide
+                wedding catering, corporate catering, large event catering and more.
                 <br />
                 <br />
-                Our years of experience and expertise is equipped to handle and perform to satisfy your guest's. We
+                Our years of experience and expertise is equipped to handle and perform to satisfy your guest&#39;s. We
                 understand the pressure to prepare for just about any event can be overwhelming, allow us to take
                 catering off your plate from start to finish.
               </p>

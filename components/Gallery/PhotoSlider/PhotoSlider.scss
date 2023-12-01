@@ -1,0 +1,42 @@
+@import '@/app/_scss/variables.module.scss';
+
+.photoSlider {
+  margin: 0.25em 0 2em;
+  width: 90vw;
+  max-width: 38rem;
+
+  .slideWrapper {
+    display: flex;
+    justify-content: center;
+
+    &--stacked {
+      flex-direction: column;
+      align-items: center;
+      gap: 1%;
+    }
+  }
+
+  @include bp-custom-min(530) {
+    max-width: 68em;
+  }
+
+  @include bp-laptop {
+    width: 40vw;
+    max-width: 38em;
+    margin: 3em 1em;
+  }
+
+  @include bp-custom-min(1100) {
+    width: 55vw;
+    max-width: 70em;
+  }
+
+  @include bp-4k-laptop {
+    width: 60vw;
+    max-width: 130rem;
+  }
+
+  @include bp-custom-min(1675) {
+    width: 67vw;
+  }
+}
