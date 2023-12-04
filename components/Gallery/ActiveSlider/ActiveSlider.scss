@@ -216,3 +216,21 @@
     }
   }
 }
+
+@media screen and (max-height: '725px') {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 55rem;
+
+      .activeSlideWrapper {
+        &--portrait {
+          max-width: 40rem;
+        }
+
+        &--landscape {
+          max-width: 45rem;
+        }
+      }
+    }
+  } 
+}
