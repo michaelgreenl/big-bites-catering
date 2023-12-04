@@ -1,8 +1,8 @@
 'use client';
 
 import './PhotoSlider.scss';
+import { useEffect, useState } from 'react';
 import '@/components/Gallery/Slick/Slick.scss';
-import { useState } from 'react';
 import Slider from 'react-slick';
 import GalleryImage from '../GalleryImage/GalleryImage';
 import 'slick-carousel/slick/slick.css';
@@ -12,6 +12,7 @@ import { NextArrow, PrevArrow } from '@/components/Gallery/Slick/Slick';
 import ActiveSlider from '@/components/Gallery/ActiveSlider/ActiveSlider';
 
 const PhotoSlider = () => {
+  const [activeSliderImages, setActiveSliderImages] = useState([]);
   const sliderImages = [
     [
       { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300, buttonWidth: '98%', slide: 0 },
@@ -34,39 +35,18 @@ const PhotoSlider = () => {
     ],
   ];
 
-  const activeSliderImages = [
-    { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_2.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_1.webp', height: 200, width: 150 },
-    { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_2.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_1.webp', height: 200, width: 150 },
-    { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_2.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_1.webp', height: 200, width: 150 },
-    { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300 },
-    { src: '/assets/images/gallery/IMG_2.webp', height: 200, width: 300 },
-  ];
-  // const sliderImages = [
-  //   { src: '/assets/images/gallery/IMG_1.webp', height: 200, width: 150, buttonWidth: '99%' },
-  //   [
-  //     { src: '/assets/images/gallery/IMG_3.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //     { src: '/assets/images/gallery/IMG_2.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //   ],
-  //   // { src: '/assets/images/gallery/IMG_0.JPG', height: 200, width: 150, buttonWidth: '99%' },
-  //   { src: '/assets/images/gallery/IMG_1.webp', height: 200, width: 150, buttonWidth: '99%' },
-  //   [
-  //     { src: '/assets/images/gallery/IMG_6.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //     { src: '/assets/images/gallery/IMG_5.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //   ],
-  //   { src: '/assets/images/gallery/IMG_8.webp', height: 200, width: 150, buttonWidth: '99%' },
-  //   [
-  //     { src: '/assets/images/gallery/IMG_9.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //     { src: '/assets/images/gallery/IMG_4.webp', height: 200, width: 300, buttonWidth: '98%' },
-  //   ],
-  // ];
-  // { src: '/assets/images/gallery/IMG_7.JPG', height: 200, width: 300, buttonWidth: '95%' },
-  // { src: '/assets/images/gallery/IMG_10.JPG', height: 200, width: 300, buttonWidth: '95%' },
+  useEffect(() => {
+    let tempImages = [];
+    for (const image of sliderImages) {
+      if (image[0] !== undefined) {
+        tempImages.push({ src: image[0].src, height: image[0].height, width: image[0].width });
+        tempImages.push({ src: image[1].src, height: image[1].height, width: image[1].width });
+      } else {
+        tempImages.push({ src: image.src, height: image.height, width: image.width });
+      }
+    }
+    setActiveSliderImages(tempImages);
+  }, []);
 
   const sliderSettings = {
     className: 'photoSlider',
