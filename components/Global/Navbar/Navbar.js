@@ -322,31 +322,24 @@ const Navbar = () => {
               exit={'closed'}
             >
               {navbarData.links.map((link) => (
-                <>
-                  {!link.dropdown ? (
-                    <NavItem
-                      key={link.href}
-                      href={link.href}
-                      isActive={pathname.endsWith(link.href)}
-                      icon={link.icon}
-                      style={link.mobileStyle}
-                      text={link.name}
-                    />
-                  ) : (
-                    <NavItem
-                      key={link.href}
-                      href={link.href}
-                      isActive={link.href.some((currPath) => pathname.endsWith(currPath))}
-                      dropdownIconAfter={link.icon}
-                      style={link.mobileStyle}
-                      dropdownLinkText={link.name}
-                      dropdown={true}
-                      dropdownOpen={link.mobileDropdownOpen}
-                      dropdownOnClick={link.mobileDropdownOnClick}
-                      dropdownList={link.mobileDropdownList}
-                    />
-                  )}
-                </>
+                <NavItem
+                  key={link.href}
+                  href={link.href}
+                  isActive={
+                    !link.dropdown
+                      ? pathname.endsWith(link.href)
+                      : link.href.some((currPath) => pathname.endsWith(currPath))
+                  }
+                  dropdownIconAfter={link.icon}
+                  style={link.mobileStyle}
+                  icon={link.icon}
+                  text={link.name}
+                  dropdownLinkText={link.name}
+                  dropdown={link.dropdown}
+                  dropdownOpen={link.mobileDropdownOpen}
+                  dropdownOnClick={link.mobileDropdownOnClick}
+                  dropdownList={link.mobileDropdownList}
+                />
               ))}
             </motion.ul>
           </>
@@ -354,35 +347,23 @@ const Navbar = () => {
       </AnimatePresence>
       <ul className={styles.listDesktop}>
         {navbarData.links.map((link) => (
-          <>
-            {!link.dropdown ? (
-              <NavItemDesktop
-                key={link.href}
-                href={link.href}
-                isActive={pathname.endsWith(link.href)}
-                text={link.name}
-                style={link.desktopStyle}
-                otherLinkHovered={otherLinkHovered}
-                setOtherLinkHovered={setOtherLinkHovered}
-                icon={link.desktopIcon}
-              />
-            ) : (
-              <NavItemDesktop
-                key={link.href}
-                href={link.href}
-                isActive={link.href.some((currPath) => pathname.endsWith(currPath))}
-                style={link.desktopStyle}
-                text={link.name}
-                otherLinkHovered={otherLinkHovered}
-                setOtherLinkHovered={setOtherLinkHovered}
-                dropdownLinkText={link.name}
-                dropdown={true}
-                dropdownOpen={link.desktopDropdownOpen}
-                setDropdownOpen={link.desktopDropdownOnClick}
-                dropdownList={link.desktopDropdownList}
-              />
-            )}
-          </>
+          <NavItemDesktop
+            key={link.href}
+            href={link.href}
+            isActive={
+              !link.dropdown ? pathname.endsWith(link.href) : link.href.some((currPath) => pathname.endsWith(currPath))
+            }
+            text={link.name}
+            style={link.desktopStyle}
+            icon={link.desktopIcon}
+            otherLinkHovered={otherLinkHovered}
+            setOtherLinkHovered={setOtherLinkHovered}
+            dropdownLinkText={link.name}
+            dropdown={link.dropdown}
+            dropdownOpen={link.desktopDropdownOpen}
+            setDropdownOpen={link.desktopDropdownOnClick}
+            dropdownList={link.desktopDropdownList}
+          />
         ))}
       </ul>
     </nav>

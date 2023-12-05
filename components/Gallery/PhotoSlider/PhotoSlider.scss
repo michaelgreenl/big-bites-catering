@@ -6,7 +6,7 @@
   max-width: 38rem;
 
   .slideWrapper {
-    display: flex;
+    display: flex !important;
     justify-content: center;
 
     &--stacked {

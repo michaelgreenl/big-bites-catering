@@ -1,0 +1,39 @@
+{
+  "fields": [
+    {
+      "name": "First Name",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Last Name",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "Phone Number",
+      "required": true,
+      "type": "tel"
+    },
+    {
+      "name": "Email Address",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "name": "Date of Event",
+      "required": false,
+      "type": "date"
+    },
+    {
+      "name": "Number of Guests",
+      "required": false,
+      "type": "number"
+    },
+    {
+      "name": "Number of Guests",
+      "required": false,
+      "type": "number"
+    }
+  ]
+}

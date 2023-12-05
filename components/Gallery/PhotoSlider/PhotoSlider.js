@@ -106,43 +106,39 @@ const PhotoSlider = () => {
     <>
       <Slider {...sliderSettings}>
         {sliderImages.map((image) => (
-          <>
+          <div className={'slideWrapper'} key={image[0] === undefined ? image.src : image[0].src}>
             {image[0] === undefined ? (
-              <div className={'slideWrapper'} key={image.src}>
-                <div style={{ width: image.buttonWidth }}>
-                  <GalleryImage
-                    imageSrc={image.src}
-                    imageHeight={image.height}
-                    imageWidth={image.width}
-                    buttonWidth={image.buttonWidth}
-                    setActiveSlide={setActiveSlider}
-                    slide={image.slide}
-                  />
-                </div>
+              <div style={{ width: image.buttonWidth }}>
+                <GalleryImage
+                  imageSrc={image.src}
+                  imageHeight={image.height}
+                  imageWidth={image.width}
+                  buttonWidth={image.buttonWidth}
+                  setActiveSlide={setActiveSlider}
+                  slide={image.slide}
+                />
               </div>
             ) : (
-              <div className={'slideWrapper'} key={image[0].src}>
-                <div className={'slideWrapper slideWrapper--stacked'} style={{ width: image[0].buttonWidth }}>
-                  <GalleryImage
-                    imageSrc={image[0].src}
-                    imageHeight={image[0].height}
-                    imageWidth={image[0].width}
-                    buttonWidth={image[0].buttonWidth}
-                    setActiveSlide={setActiveSlider}
-                    slide={image[0].slide}
-                  />
-                  <GalleryImage
-                    imageSrc={image[1].src}
-                    imageHeight={image[1].height}
-                    imageWidth={image[1].width}
-                    buttonWidth={image[1].buttonWidth}
-                    setActiveSlide={setActiveSlider}
-                    slide={image[1].slide}
-                  />
-                </div>
+              <div className={'slideWrapper slideWrapper--stacked'} style={{ width: image[0].buttonWidth }}>
+                <GalleryImage
+                  imageSrc={image[0].src}
+                  imageHeight={image[0].height}
+                  imageWidth={image[0].width}
+                  buttonWidth={image[0].buttonWidth}
+                  setActiveSlide={setActiveSlider}
+                  slide={image[0].slide}
+                />
+                <GalleryImage
+                  imageSrc={image[1].src}
+                  imageHeight={image[1].height}
+                  imageWidth={image[1].width}
+                  buttonWidth={image[1].buttonWidth}
+                  setActiveSlide={setActiveSlider}
+                  slide={image[1].slide}
+                />
               </div>
             )}
-          </>
+          </div>
         ))}
       </Slider>
       {isActive && (
