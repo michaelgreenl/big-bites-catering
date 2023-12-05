@@ -9,7 +9,7 @@ export default async function Contact() {
     <main className='contact'>
       <form>
         {data.fields.map((field) => (
-          <span>{field}</span>
+          <span key={field.name}>{field}</span>
         ))}
       </form>
     </main>
