@@ -1,0 +1,433 @@
+.navbar {
+  position: fixed;
+  z-index: 900;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  width: 100%;
+  padding: 0px 0.75rem 0px 1rem;
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+  }
+
+  .listDesktop {
+    display: none;
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.346);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .logo {
+    width: 7.5em;
+  }
+
+  .menuButton {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0.75em;
+    border: 0;
+    border-radius: 100%;
+    transition: all 200ms ease;
+
+    @include hoverStyles {
+      background-color: #e5e9ed46;
+    }
+
+    &:active,
+    &--active {
+      background-color: #e5e9ed46;
+    }
+
+    .svg {
+      stroke-width: 2px;
+      stroke-linecap: round;
+      width: 1.5em;
+      height: 1.5em;
+
+      &--open {
+        stroke: $secondary-black;
+      }
+
+      &--closed {
+        stroke: $primary-white;
+      }
+    }
+  }
+
+  .list {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    list-style: none;
+    height: 100vh;
+    width: 23rem;
+    top: 0;
+    right: 0;
+    padding-top: 6rem;
+    background-color: $primary-white;
+    overflow-y: auto;
+
+    .linkCont {
+      display: flex;
+      align-items: center;
+      padding: 0.5em 1.6em;
+      color: $secondary-black;
+
+      &--active {
+        border-left: 3px solid $bright-blue;
+        background-color: $lightest-grey;
+        color: $bright-blue;
+      }
+
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.3em;
+        width: 100%;
+        font-size: 1.6em;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        white-space: nowrap;
+
+        .svg {
+          fill: $secondary-black;
+
+          &--active {
+            fill: $bright-blue;
+          }
+        }
+      }
+    }
+
+    .dropdownLinkCont {
+      display: flex;
+      flex-direction: column;
+      color: $secondary-black;
+
+      .link {
+        font-size: 1.6em !important;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.3em;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        white-space: nowrap;
+
+        &--active {
+          border-left: 3px solid $bright-blue !important;
+          background-color: $lightest-grey !important;
+          color: $bright-blue !important;
+        }
+
+        .svg {
+          fill: $secondary-black;
+
+          &--active {
+            fill: $bright-blue;
+          }
+        }
+
+        .svgArrow {
+          stroke: $secondary-black;
+          stroke-width: 10px;
+          stroke-linecap: round;
+          width: 0.7em;
+          height: 0.7em;
+          margin-right: auto;
+          transform: translateY(-1px) rotate(-90deg);
+          transition: all 75ms ease-in;
+
+          &--svgActive {
+            transform: translateY(-1px) rotate(0deg);
+          }
+
+          &--linkActive {
+            stroke: $bright-blue;
+          }
+        }
+      }
+
+      .subListWrapper {
+        overflow: hidden;
+        width: 100%;
+
+        .subList {
+          display: flex;
+          flex-direction: column;
+
+          .subLinkCont {
+            display: flex;
+            align-items: center;
+            padding: 0.5em 1.6em;
+            padding-right: 1.5em;
+            border-right: solid 2px $silver;
+            height: 3.5em;
+
+            .subLink {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              gap: 0.3em;
+              width: 100%;
+              font-size: 1.6em;
+              font-weight: 400;
+              letter-spacing: 0.025em;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include bp-laptop {
+    .menuButton,
+    .overlay {
+      display: none;
+    }
+
+    .listDesktop {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 2em;
+      padding: 0 2em 0 2.5em;
+      list-style: none;
+
+      .linkCont {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 0.5em;
+        height: 46%;
+
+        & > * {
+          position: relative;
+          z-index: 1;
+        }
+
+        .link {
+          font-size: 1.2em;
+          font-family: $primary-font-stack;
+          font-weight: 300;
+          letter-spacing: 0.04ch;
+          color: $primary-white;
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+
+          .svg {
+            fill: $primary-white;
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 0;
+          height: 100%;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 100%;
+          border-bottom: solid 1px $primary-white;
+          transition: all 150ms ease-in-out;
+        }
+
+        @include hoverStyles {
+          &::after {
+            right: 0;
+          }
+        }
+
+        &--active {
+          &::after {
+            right: 0;
+          }
+
+          &--otherLinkHovered {
+            &::after {
+              right: 100%;
+            }
+          }
+        }
+
+        &--svg {
+          &::after {
+            left: var(--left);
+          }
+        }
+
+        &--dropdown {
+          font-size: 1.2em;
+          font-weight: 300;
+          letter-spacing: 0.04ch;
+
+          &_button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25em;
+            color: $primary-white;
+
+            &_arrow {
+              stroke: $primary-white;
+              stroke-width: 10px;
+              height: 0.75em;
+              width: 0.75em;
+              transition: transform ease-in-out 100ms;
+
+              &--active {
+                transform: translateY(2px);
+              }
+            }
+
+            @include hoverStyles {
+              .linkCont--dropdown_button_arrow {
+                transform: translateY(3px);
+              }
+            }
+          }
+        }
+
+        .dropdownListWrapper {
+          padding: 0.25em 0;
+          position: absolute;
+          top: 159%;
+          right: -172%;
+          width: 280%;
+          overflow: hidden;
+          border-radius: 0 0 5px 5px;
+
+          & > * {
+            position: relative;
+            z-index: 1;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            background-color: $primary-white;
+            background-color: rgba(0, 0, 0, 0.75);
+          }
+
+          .dropdownList {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2em;
+            height: 100%;
+            width: 100%;
+
+            .dropdownLinkCont {
+              display: flex;
+              align-items: center;
+              padding-left: 1em;
+              height: 3.5em;
+              font-family: $primary-font-stack;
+              color: $primary-white;
+
+              .dropdownLink {
+                display: flex;
+                align-items: center;
+                gap: 0.8em;
+                height: 3em;
+                width: 100%;
+                font-weight: 300;
+                letter-spacing: 0.025em;
+                white-space: nowrap;
+
+                .icon {
+                  width: 1.8em;
+                  height: 1.8em;
+                }
+              }
+
+              &:hover {
+                background-color: rgb(192, 192, 192, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include bp-custom-min(865) {
+    height: 6.5em;
+
+    .logo {
+      width: 8em;
+    }
+
+    .listDesktop {
+      .linkCont {
+        .link {
+          font-size: 1.3em;
+        }
+
+        &--dropdown {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+
+  @include bp-4k-laptop {
+    .listDesktop {
+      .linkCont {
+        .link {
+          font-size: 1.4em;
+        }
+
+        &--dropdown {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}

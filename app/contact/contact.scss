@@ -1,0 +1,7 @@
+.contact {
+  padding-top: 6em;
+  
+  @include bp-lrg-laptop {
+    padding-top: 6.5em;
+  }
+}

@@ -1,0 +1,200 @@
+.serviceCards {
+  font-size: 1.6em;
+  display: flex;
+  padding: 1em 0.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+
+  .serviceCard {
+    position: relative;
+    z-index: 1;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1.5rem;
+    padding: 1.5em;
+    color: $secondary-black;
+    background-color: $lighter-grey;
+    overflow: hidden;
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      background-image: var(--background-src);
+      background-size: var(--background-size);
+      background-position: var(--background-pos);
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: 0.5;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
+
+      .icon {
+        height: 2.25em;
+        width: 2.25em;
+        border-radius: 12px;
+        padding: 0.5em;
+        background-color: rgb(49, 49, 49);
+      }
+
+      .text {
+        font-size: clamp(1.5em, 8vw, 2.2em);
+        font-weight: 400 !important;
+      }
+    }
+
+    .text {
+      font-size: clamp(0.9em, 3.6vw, 1.05em);
+      color: black !important;
+    }
+
+    .buttons {
+      font-size: clamp(0.85em, 2.75vw, 0.93em);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.6em;
+      padding-top: 0.75em;
+
+      .link {
+        align-self: flex-end;
+
+        &:first-child {
+          .button {
+            background-color: $bright-blue !important;
+          }
+        }
+
+        &:last-child {
+          .button {
+            background-color: $dark-blue !important;
+          }
+        }
+
+        .button {
+          display: flex;
+          align-items: center;
+          gap: 0.25em;
+
+          .arrow {
+            height: 0.7em;
+            width: 0.7em;
+            stroke: $primary-white;
+            stroke-width: 13px;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    @include bp-phone {
+      .header {
+        .icon {
+          height: 2.6em;
+          width: 2.6em;
+        }
+
+        .text {
+          font-size: clamp(1.65em, 6vw, 2em);
+        }
+      }
+    }
+
+    @include bp-custom-min(594) {
+      padding: 1em 2em;
+      max-width: 565px;
+      width: 82%;
+
+      &:nth-child(odd) {
+        margin-right: auto;
+        margin-left: 2.5%;
+      }
+
+      &:nth-child(even) {
+        margin-left: auto;
+        margin-right: 2.5%;
+      }
+
+      .text {
+        padding-right: 3em;
+      }
+    }
+
+    @include bp-tablet {
+      .header {
+        .icon {
+          height: 3em;
+          width: 3em;
+        }
+      }
+    }
+
+    @include bp-custom-min(817) {
+      &:nth-child(odd) {
+        margin-left: 6vw;
+      }
+
+      &:nth-child(even) {
+        margin-right: 6vw;
+      }
+
+      .text {
+        padding: 0;
+      }
+    }
+  }
+
+  @include bp-custom-min(400) {
+    padding: 1em 2em;
+  }
+
+  @include bp-lrg-laptop {
+    flex-direction: row !important;
+    padding: 2em;
+
+    .serviceCard {
+      flex: 1;
+      max-width: 425px;
+
+      &:nth-child(odd) {
+        margin: 0;
+      }
+
+      &:nth-child(even) {
+        margin: 0;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include bp-4k-laptop {
+    .serviceCard {
+      max-width: 660px;
+      gap: 0.25em;
+    }
+
+    gap: 2vw;
+  }
+}

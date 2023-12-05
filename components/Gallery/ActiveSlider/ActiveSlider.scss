@@ -1,0 +1,236 @@
+.activeSliderWrapper {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  height: 100vh;
+  width: 100vw;
+
+  .closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-1.55em, 2em);
+    align-self: flex-end;
+    height: 2em;
+    width: 2em;
+
+    // to hide menu button behind it
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      height: 150%;
+      width: 200%;
+      top: -25%;
+      left: -75%;
+      backdrop-filter: blur(20px);
+    }
+
+    .closeButtonIcon {
+      stroke: $primary-white;
+      stroke-width: 9px;
+      height: 2em;
+      width: 2em;
+    }
+  }
+
+  .activePhotoSlider {
+    margin: auto;
+    width: 90%;
+    max-width: 85rem;
+
+    .slick-slide div {
+      display: flex;
+      align-items: center;
+    }
+
+    .activeSlideWrapper {
+      height: 100% !important;
+      width: 99.9% !important;
+
+      margin: 0 auto;
+
+      &--portrait {
+        max-width: 50rem;
+      }
+
+      &--landscape {
+        max-width: 68rem;
+      }
+    }
+  }
+}
+
+@include bp-custom-min(580) {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      .activeSlideWrapper {
+        &--portrait {
+          width: 80% !important;
+        }
+      }
+    }
+  }
+}
+
+@include bp-laptop {
+  .activeSliderWrapper {
+    .closeButton {
+      transform: translate(-5em, 5em);
+      height: 4em;
+      width: 4em;
+      border-radius: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 2px black;
+
+      @include hoverStyles {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &:active {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &::after {
+        display: none;
+      }
+
+      .closeButtonIcon {
+        stroke: $dark-grey;
+        height: 1.6em;
+        width: 1.7em;
+      }
+    }
+
+    .activePhotoSlider {
+      .prev-arrow,
+      .next-arrow {
+        height: 4em !important;
+        width: 4em !important;
+
+        @include hoverStyles {
+          opacity: 1;
+        }
+
+        &:active {
+          opacity: 1;
+          height: 3.8em !important;
+          width: 3.8em !important;
+        }
+      }
+
+      .next-arrow {
+        transform: translate(-20px, -20px) !important;
+        &:active {
+          transform: translate(-15px, -18px) !important;
+        }
+      }
+
+      .prev-arrow {
+        transform: translate(20px, -20px) !important;
+        &:active {
+          transform: translate(15px, -18px) !important;
+        }
+      }
+
+      .arrow {
+        height: 2.1em;
+        width: 5em;
+        stroke-width: 8px;
+      }
+    }
+  }
+}
+
+@include bp-lrg-laptop {
+  .activeSliderWrapper {
+    .closeButton {
+      transform: translate(-10em, 5em);
+      height: 5em;
+      width: 5em;
+
+      .closeButtonIcon {
+        height: 2.1em;
+        width: 2.2em;
+      }
+    }
+
+    .activePhotoSlider {
+      .prev-arrow,
+      .next-arrow {
+        height: 5em !important;
+        width: 5em !important;
+
+        @include hoverStyles {
+          opacity: 1;
+        }
+
+        &:active {
+          opacity: 1;
+          height: 4.8em !important;
+          width: 4.8em !important;
+        }
+      }
+
+      .next-arrow {
+        transform: translate(-20px, -20px) !important;
+        &:active {
+          transform: translate(-15px, -18px) !important;
+        }
+      }
+
+      .prev-arrow {
+        transform: translate(20px, -20px) !important;
+        &:active {
+          transform: translate(15px, -18px) !important;
+        }
+      }
+
+      .arrow {
+        height: 2.5em;
+        width: 6em;
+      }
+    }
+  }
+}
+
+@include bp-custom-min(2000) {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 115rem;
+
+      .activeSlideWrapper {
+        &--portrait {
+          max-width: 65rem;
+        }
+
+        &--landscape {
+          max-width: 77rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: '725px') {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 55rem;
+
+      .activeSlideWrapper {
+        &--portrait {
+          max-width: 40rem;
+        }
+
+        &--landscape {
+          max-width: 45rem;
+        }
+      }
+    }
+  } 
+}

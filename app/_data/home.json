@@ -1,0 +1,67 @@
+{
+  "logos": [
+    {
+      "image": "/assets/images/logos/eastern-michigan-logo.webp",
+      "name": "Eastern Michigan University",
+      "width": 330,
+      "height": 200,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/images/logos/rocket-mortgage-logo.webp",
+      "name": "Rocket Mortgage Classic",
+      "width": 566,
+      "height": 200,
+      "style": { "paddingTop": "33.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/thunder-logo.svg",
+      "name": "Oklahoma City Thunder",
+      "width": 330,
+      "height": 200,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/forbes-logo.svg",
+      "name": "Forbes",
+      "width": 300,
+      "height": 183,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/images/logos/st-john-logo.webp",
+      "name": "St John Hospital",
+      "width": 373,
+      "height": 245,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/little-caesars-logo.svg",
+      "name": "Little Caesars Arena",
+      "width": 300,
+      "height": 183,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/kellogg-logo.svg",
+      "name": "Kellogg's",
+      "width": 300,
+      "height": 183,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/michigan-logo.svg",
+      "name": "Michigan University",
+      "width": 300,
+      "height": 183,
+      "style": { "paddingTop": "20.3%" }
+    },
+    {
+      "image": "/assets/svgs/logos/carhartt-logo.svg",
+      "name": "Carhartt",
+      "width": 300,
+      "height": 183,
+      "style": { "paddingTop": "20.3%" }
+    }
+  ]
+}

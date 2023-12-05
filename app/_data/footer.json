@@ -1,0 +1,173 @@
+{
+  "socialLinks": [
+    {
+      "href": "https://www.instagram.com/biggbites/",
+      "image": {
+        "src": "/assets/svgs/logos/instagram-logo.svg",
+        "alt": "Instagram Social Media Link"
+      }
+    },
+    {
+      "href": "https://www.youtube.com/watch?v=KvqlWWc_gAw&t=17s",
+      "image": {
+        "src": "/assets/svgs/logos/youtube-logo.svg",
+        "alt": "Youtube Social Media Link"
+      }
+    },
+    {
+      "href": "https://www.facebook.com/biggbitescaterings",
+      "image": {
+        "src": "/assets/svgs/logos/facebook-logo.svg",
+        "alt": "Facebook Social Media Link"
+      }
+    }
+  ],
+  "links": {
+    "company": [
+      {
+        "href": "/menu",
+        "text": "Menu"
+      },
+      {
+        "href": "/gallery",
+        "text": "Gallery"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/about",
+        "text": "About Us"
+      }
+    ],
+    "services": [
+      {
+        "href": "/wedding-catering",
+        "text": "Wedding Catering"
+      },
+      {
+        "href": "/corporate-catering",
+        "text": "Corporate Catering"
+      },
+      {
+        "href": "/social-gatherings",
+        "text": "Social Gatherings"
+      }
+    ],
+    "contact": [
+      {
+        "href": "tel:313-784-0397",
+        "text": "(313) 784-0397",
+        "contactType": "customer service",
+        "prop": "telephone",
+        "hoursAvailable": [
+          {
+            "dayOfWeek": "Monday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Tuesday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Wednesday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Thursday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Friday",
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "href": "mailto:Biggbitescatering@gmail.com",
+        "text": "Biggbitescatering@gmail.com",
+        "contactType": "customer support",
+        "prop": "email",
+        "hoursAvailable": [
+          {
+            "dayOfWeek": "Monday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Tuesday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Wednesday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Thursday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "dayOfWeek": "Friday",
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "href": "https://www.google.com/maps/place/5675+Byron+Center+Ave+SW,+Wyoming,+MI+49519",
+        "textHeader": "Downtown Detroit",
+        "text": "5675 Byron Center Ave SW,<br /> Wyoming, MI<br /> 49519",
+        "name": "Downtown Detroit",
+        "streetAddress": "5675 Byron Center Ave SW,",
+        "addressLocality": "Wyoming",
+        "addressRegion": "MI",
+        "postalCode": "49519"
+      },
+      {
+        "href": "https://www.google.com/maps/place/5675+Byron+Center+Ave+SW,+Wyoming,+MI+49519",
+        "textHeader": "Auburn Hills",
+        "text": "5675 Byron Center Ave SW,<br /> Wyoming, MI<br /> 49519",
+        "name": "Auburn Hills",
+        "streetAddress": "5675 Byron Center Ave SW,",
+        "addressLocality": "Wyoming",
+        "addressRegion": "MI",
+        "postalCode": "49519"
+      },
+      {
+        "href": "https://www.google.com/maps/place/5675+Byron+Center+Ave+SW,+Wyoming,+MI+49519",
+        "textHeader": "Ann Arbor",
+        "text": "5675 Byron Center Ave SW,<br /> Wyoming, MI<br /> 49519",
+        "name": "Ann Arbor",
+        "streetAddress": "5675 Byron Center Ave SW,",
+        "addressLocality": "Wyoming",
+        "addressRegion": "MI",
+        "postalCode": "49519"
+      }
+    ],
+    "social": [
+      {
+        "href": "https://www.facebook.com/biggbitescaterings",
+        "text": "Instagram"
+      },
+      {
+        "href": "https://www.youtube.com/watch?v=KvqlWWc_gAw&t=17s",
+        "text": "Youtube"
+      },
+      {
+        "href": "https://www.facebook.com/biggbitescaterings",
+        "text": "Facebook"
+      }
+    ]
+  }
+}

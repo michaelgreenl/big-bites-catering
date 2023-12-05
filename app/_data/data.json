@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "about": {
+      "title": "Bigg Bites Detroit Catering | About Us",
+      "description": "Contact us today"
+    },
+    "contact": {
+      "title": "Bigg Bites Detroit Catering | Contact",
+      "description": "Contact us today"
+    },
+    "menu": {
+      "title": "Bigg Bites Detroit Catering | Menu",
+      "description": "Contact us today"
+    },
+    "gallery": {
+      "title": "Bigg Bites Detroit Catering | Gallery",
+      "description": "Contact us today"
+    },
+    "corporate-catering": {
+      "title": "Bigg Bites Detroit Catering | Corporate Catering",
+      "description": "Contact us today"
+    },
+    "social-gatherings": {
+      "title": "Bigg Bites Detroit Catering | Social Gatherings",
+      "description": "Contact us today"
+    },
+    "wedding-catering": {
+      "title": "Bigg Bites Detroit Catering | Wedding Catering",
+      "description": "Contact us today"
+    }
+  },
+  "contact": {
+    "phone": "(313) 784-0397",
+    "email": "Biggbitescatering@gmail.com",
+    "locations": [
+      { "place": "Downtown Detroit", "address": "5675 Byron Center Ave SW, Wyoming, MI 49519" },
+      { "place": "Auburn Hills", "address": "5675 Byron Center Ave SW, Wyoming, MI 49519" },
+      { "place": "Ann Arbor", "address": "5675 Byron Center Ave SW, Wyoming, MI 49519" }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+.landing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0.95 0.95 auto;
+  min-height: 95vh;
+  width: 100%;
+  color: $primary-white;
+  border-radius: 0 0 100vw 100vw/0 0 8vh 8vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, var(--background-opacity));
+    border-radius: 0 0 100vw 100vw/0 0 8vh 8vh;
+  }
+
+  .cont {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 1.5em;
+    // gap: 1.2em;
+    padding: 0em 4em 0;
+  }
+}
