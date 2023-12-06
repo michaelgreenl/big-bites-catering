@@ -21,6 +21,7 @@ import { GalleryFillSvg } from '../../svgs/GallerySvg/GalleryFillSvg';
 import { ServicesFillSvg } from '../../svgs/ServicesSvg/ServicesFillSvg';
 import { ServicesSvg } from '../../svgs/ServicesSvg/ServicesSvg';
 import NavItemDesktop from './NavItemDesktop';
+import { useDisableScroll } from '@/hooks/useDisableScroll';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -28,6 +29,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileServicesListOpen, setMobileServicesListOpen] = useState(false);
   const [servicesListOpen, setServicesListOpen] = useState(false);
+  const [disableScroll, enableScroll] = useDisableScroll();
 
   const navbarControls = useAnimation();
   const servicesListControls = useAnimation();
@@ -77,8 +79,10 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       navbarControls.start('open');
+      disableScroll();
     } else {
       navbarControls.start('closed');
+      enableScroll();
       setMobileServicesListOpen(false);
     }
   }, [isOpen]);
