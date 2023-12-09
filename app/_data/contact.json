@@ -29,11 +29,6 @@
       "name": "Number of Guests",
       "required": false,
       "type": "number"
-    },
-    {
-      "name": "Number of Guests",
-      "required": false,
-      "type": "number"
     }
   ]
 }
