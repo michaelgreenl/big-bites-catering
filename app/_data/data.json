@@ -1,32 +1,32 @@
 {
   "metadata": {
     "about": {
-      "title": "Bigg Bites Detroit Catering | About Us",
-      "description": "Contact us today"
+      "title": "About Us",
+      "description": "Learn more about Bigg Bites catering"
     },
     "contact": {
-      "title": "Bigg Bites Detroit Catering | Contact",
+      "title": "Contact",
       "description": "Contact us today"
     },
     "menu": {
-      "title": "Bigg Bites Detroit Catering | Menu",
-      "description": "Contact us today"
+      "title": "Menu",
+      "description": "Check out Bigg Bites menu options"
     },
     "gallery": {
-      "title": "Bigg Bites Detroit Catering | Gallery",
-      "description": "Contact us today"
+      "title": "Gallery",
+      "description": "View pictures from Bigg Bites catering"
     },
     "corporate-catering": {
-      "title": "Bigg Bites Detroit Catering | Corporate Catering",
-      "description": "Contact us today"
+      "title": "Corporate Catering",
+      "description": "About corporate catering services"
     },
     "social-gatherings": {
-      "title": "Bigg Bites Detroit Catering | Social Gatherings",
-      "description": "Contact us today"
+      "title": "Social Gatherings",
+      "description": "About social gatherings services"
     },
     "wedding-catering": {
-      "title": "Bigg Bites Detroit Catering | Wedding Catering",
-      "description": "Contact us today"
+      "title": "Wedding Catering",
+      "description": "About wedding catering services"
     }
   },
   "contact": {
