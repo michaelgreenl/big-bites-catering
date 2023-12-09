@@ -1,14 +1,17 @@
 import { promises as fs } from 'fs';
 import './contact.scss';
+import { generateMetadata } from '@/hooks/generateMetadata';
+
+export const metadata = generateMetadata('contact');
 
 export default async function Contact() {
-  const file = await fs.readFile(process.cwd() + '/app/_data/contact.json', 'utf8');
-  const data = JSON.parse(file);
+  const contactFile = await fs.readFile(process.cwd() + '/app/_data/contact.json', 'utf8');
+  const contactData = JSON.parse(contactFile);
 
   return (
     <main className='contact'>
       <form>
-        {data.fields.map((field) => (
+        {contactData.fields.map((field) => (
           <span key={field.name}>{field.name}</span>
         ))}
       </form>
