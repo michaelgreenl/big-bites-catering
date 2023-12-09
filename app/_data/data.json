@@ -1,5 +1,11 @@
 {
   "metadata": {
+    "home": {
+      "title": {
+        "absolute": "Bigg Bites Catering"
+      },
+      "description": "Bigg Bites catering, in downtown Detroit"
+    },
     "about": {
       "title": "About Us",
       "description": "Learn more about Bigg Bites catering"
@@ -27,6 +33,32 @@
     "wedding-catering": {
       "title": "Wedding Catering",
       "description": "About wedding catering services"
+    },
+    "icons": {
+      "icon": [
+        {
+          "url": "/icons/favicon.ico",
+          "type": "image/x-icon",
+          "sizes": "any"
+        },
+        {
+          "url": "/icons/favicon-16x16.png",
+          "type": "image/png",
+          "sizes": "16x16"
+        },
+        {
+          "url": "/icons/favicon-32x32.png",
+          "type": "image/png",
+          "sizes": "32x32"
+        }
+      ],
+      "apple": [
+        {
+          "url": "/icons/apple-touch-icon.png",
+          "type": "image/png",
+          "sizes": "180x180"
+        }
+      ]
     }
   },
   "contact": {
