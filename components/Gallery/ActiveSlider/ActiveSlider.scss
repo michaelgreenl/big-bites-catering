@@ -78,12 +78,12 @@
   }
 }
 
-@include bp-laptop {
+@include bp-custom-min(650) {
   .activeSliderWrapper {
     .closeButton {
       transform: translate(-5em, 5em);
-      height: 4em;
-      width: 4em;
+      height: 5em;
+      width: 5em;
       border-radius: 100%;
       background: rgba(255, 255, 255, 0.8);
       box-shadow: 0 0 2px black;
@@ -102,59 +102,6 @@
 
       .closeButtonIcon {
         stroke: $dark-grey;
-        height: 1.6em;
-        width: 1.7em;
-      }
-    }
-
-    .activePhotoSlider {
-      .prev-arrow,
-      .next-arrow {
-        height: 4em !important;
-        width: 4em !important;
-
-        @include hoverStyles {
-          opacity: 1;
-        }
-
-        &:active {
-          opacity: 1;
-          height: 3.8em !important;
-          width: 3.8em !important;
-        }
-      }
-
-      .next-arrow {
-        transform: translate(-20px, -20px) !important;
-        &:active {
-          transform: translate(-15px, -18px) !important;
-        }
-      }
-
-      .prev-arrow {
-        transform: translate(20px, -20px) !important;
-        &:active {
-          transform: translate(15px, -18px) !important;
-        }
-      }
-
-      .arrow {
-        height: 2.1em;
-        width: 5em;
-        stroke-width: 8px;
-      }
-    }
-  }
-}
-
-@include bp-lrg-laptop {
-  .activeSliderWrapper {
-    .closeButton {
-      transform: translate(-10em, 5em);
-      height: 5em;
-      width: 5em;
-
-      .closeButtonIcon {
         height: 2.1em;
         width: 2.2em;
       }
@@ -177,6 +124,36 @@
         }
       }
 
+      .next-arrow {
+        transform: translate(-5px, -20px) !important;
+        &:active {
+          transform: translate(0px, -18px) !important;
+        }
+      }
+
+      .prev-arrow {
+        transform: translate(5px, -20px) !important;
+        &:active {
+          transform: translate(0px, -18px) !important;
+        }
+      }
+
+      .arrow {
+        height: 2.5em;
+        width: 6em;
+        stroke-width: 8px;
+      }
+    }
+  }
+}
+
+@include bp-lrg-laptop {
+  .activeSliderWrapper {
+    .closeButton {
+      transform: translate(-10em, 5em);
+    }
+
+    .activePhotoSlider {
       .next-arrow {
         transform: translate(-20px, -20px) !important;
         &:active {

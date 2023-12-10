@@ -1,5 +1,8 @@
 import LandingSection from '@/components/Global/LandingSection/LandingSection';
 import landingBackgroundImage from '@/public/assets/images/backgrounds/corporate-catering-background.webp';
+import { generateMetadata } from '@/hooks/generateMetadata';
+
+export const metadata = generateMetadata('corporate-catering');
 
 export default function CorporateCatering() {
   return (

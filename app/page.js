@@ -9,6 +9,9 @@ import PhotoSlider from '@/components/Gallery/PhotoSlider/PhotoSlider';
 import ServiceCards from '@/components/Home/ServiceCard/ServiceCards';
 import { ArrowSvg } from '@/components/svgs/ArrowSvg';
 import Logos from '@/components/Home/Logos/Logos';
+import { generateMetadata } from '@/hooks/generateMetadata';
+
+export const metadata = generateMetadata('home');
 
 export default function Home() {
   return (

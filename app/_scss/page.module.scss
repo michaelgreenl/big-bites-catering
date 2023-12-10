@@ -49,7 +49,7 @@
 
   .landing {
     &_logo {
-      width: 60%;
+      width: 85%;
       height: 40%;
     }
 
@@ -229,6 +229,12 @@
   }
 
   @include bp-phone {
+    .landing {
+      &_logo {
+        width: 64%;
+      }
+    }
+
     .intro {
       .subSectionWrapper {
         .subSection {
