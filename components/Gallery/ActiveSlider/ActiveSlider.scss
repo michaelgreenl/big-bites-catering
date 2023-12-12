@@ -11,10 +11,12 @@
   width: 100vw;
 
   .closeButton {
+    position: absolute;
+    top: 2em;
+    right: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-1.55em, 2em);
     align-self: flex-end;
     height: 2em;
     width: 2em;
@@ -40,9 +42,10 @@
   }
 
   .activePhotoSlider {
+    position: fixed;
     margin: auto;
     width: 90%;
-    max-width: 85rem;
+    max-width: 68.5rem;
 
     .slick-slide div {
       display: flex;
@@ -80,33 +83,6 @@
 
 @include bp-custom-min(650) {
   .activeSliderWrapper {
-    .closeButton {
-      transform: translate(-5em, 5em);
-      height: 5em;
-      width: 5em;
-      border-radius: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 0 2px black;
-
-      @include hoverStyles {
-        background: rgba(255, 255, 255, 1);
-      }
-
-      &:active {
-        background: rgba(255, 255, 255, 1);
-      }
-
-      &::after {
-        display: none;
-      }
-
-      .closeButtonIcon {
-        stroke: $dark-grey;
-        height: 2.1em;
-        width: 2.2em;
-      }
-    }
-
     .activePhotoSlider {
       .prev-arrow,
       .next-arrow {
@@ -147,10 +123,50 @@
   }
 }
 
+@include bp-custom-min(900) {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 85rem;
+    }
+  }
+}
+
+@include bp-laptop {
+  .activeSliderWrapper {
+    .closeButton {
+      top: 4em;
+      right: 4em;
+      height: 5em;
+      width: 5em;
+      border-radius: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 2px black;
+
+      @include hoverStyles {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &:active {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &::after {
+        display: none;
+      }
+
+      .closeButtonIcon {
+        stroke: $dark-grey;
+        height: 2.1em;
+        width: 2.2em;
+      }
+    }
+  }
+}
+
 @include bp-lrg-laptop {
   .activeSliderWrapper {
     .closeButton {
-      transform: translate(-10em, 5em);
+      // transform: translate(-10em, 5em);
     }
 
     .activePhotoSlider {
@@ -209,5 +225,5 @@
         }
       }
     }
-  } 
+  }
 }
