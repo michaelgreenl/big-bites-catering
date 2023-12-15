@@ -227,3 +227,40 @@
     }
   }
 }
+
+
+@media screen and (min-height: '900px') {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 100rem;
+
+      .activeSlideWrapper {
+        &--portrait {
+          max-width: 60rem;
+        }
+
+        &--landscape {
+          max-width: 77rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-height: '1100px') {
+  .activeSliderWrapper {
+    .activePhotoSlider {
+      max-width: 125rem;
+      
+      .activeSlideWrapper {
+        &--portrait {
+          max-width: 75rem;
+        }
+
+        &--landscape {
+          max-width: 90rem;
+        }
+      }
+    }
+  }
+}
